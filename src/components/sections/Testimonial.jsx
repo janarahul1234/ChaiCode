@@ -31,7 +31,11 @@ const Testimonial = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 mb-30">
           {tweetGroups.map((group, idx) => (
-            <div key={idx} className={idx === 0 ? "" : "hidden sm:block"}>
+            <div
+              key={idx}
+              className={idx === 0 ? "" : "hidden sm:block"}
+              data-theme="dark"
+            >
               {group.map((id) => (
                 <Tweet key={id} id={id} />
               ))}
