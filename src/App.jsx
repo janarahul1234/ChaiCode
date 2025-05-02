@@ -1,4 +1,4 @@
-import Index from "./pages";
+import Index from "./pages/Index";
 import Cursor from "./components/shared/Cursor";
 
 function App() {
