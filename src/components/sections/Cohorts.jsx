@@ -38,7 +38,7 @@ const cards = [
     originalPrice: 599,
     discountPrice: 299,
     btnLink: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
-    isNew: false,
+    isNew: true,
   },
   {
     video: "https://www.youtube.com/embed/oBLpqSHc3lA?si=VUvQOrRFDOn-h1Bk",

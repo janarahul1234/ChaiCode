@@ -5,9 +5,9 @@ import GradientText from "../shared/GradientText";
 import MagneticEffect from "../shared/MagneticEffect";
 
 const images = [
-  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1654110455429-cf322b40a906?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://pbs.twimg.com/profile_images/1875305826887593987/8x4ZhIvO_400x400.jpg",
+  "https://pbs.twimg.com/profile_images/1898426478339207169/WM_XtHia_400x400.jpg",
+  "https://pbs.twimg.com/profile_images/1879075502356586496/V9wQzW7V_400x400.jpg",
 ];
 
 const Hero = () => {

@@ -2,6 +2,10 @@ import { motion } from "motion/react";
 import Button from "./Button";
 import Badge from "./Badge";
 
+const formatINR = (number) => {
+  return number.toLocaleString("en-IN");
+};
+
 const Iframe = ({ src = "" }) => (
   <iframe
     width="100%"
@@ -71,13 +75,15 @@ const Card = ({
               </span>
               <div className="flex items-center gap-2">
                 <span className="text-white text-2xl font-semibold">
-                  {discountPrice}₹
+                  {formatINR(discountPrice)}₹
                 </span>
-                <span className="text-sm line-through">{originalPrice}₹</span>
+                <span className="text-sm line-through">
+                  {formatINR(originalPrice)}₹
+                </span>
               </div>
             </div>
             <Button href={btnLink} className="sm:w-full md:w-fit px-6">
-              Learn More
+              Buy now
             </Button>
           </div>
         </div>

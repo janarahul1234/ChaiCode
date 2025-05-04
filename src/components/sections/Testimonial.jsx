@@ -49,7 +49,7 @@ const Testimonial = () => {
           subtitle="Empowered Here. Now Founders, Creators, and Innovators"
         />
 
-        <div className="flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-6">
+        <div className="flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-8">
           {logos.map(({ name, src }) => (
             <div
               key={name}
