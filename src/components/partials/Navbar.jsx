@@ -12,6 +12,7 @@ const links = [
   { name: "Cohorts", href: "#cohorts" },
   { name: "Features", href: "#features" },
   { name: "Community", href: "#community" },
+  { name: "Udemy", href: "https://www.udemy.com/course/web-dev-master/?couponCode=CHAISUMMER1" },
 ];
 
 const Navbar = () => {

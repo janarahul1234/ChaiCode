@@ -75,10 +75,10 @@ const Card = ({
               </span>
               <div className="flex items-center gap-2">
                 <span className="text-white text-2xl font-semibold">
-                  {formatINR(discountPrice)}₹
+                  ₹{formatINR(discountPrice)}
                 </span>
                 <span className="text-sm line-through">
-                  {formatINR(originalPrice)}₹
+                  ₹{formatINR(originalPrice)}
                 </span>
               </div>
             </div>
