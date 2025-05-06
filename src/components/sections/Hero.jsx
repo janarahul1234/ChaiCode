@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 import Container from "../shared/Container";
 import Badge from "../shared/Badge";
 import Button from "../shared/Button";
@@ -11,14 +9,6 @@ const images = [
   "https://pbs.twimg.com/profile_images/1898426478339207169/WM_XtHia_400x400.jpg",
   "https://pbs.twimg.com/profile_images/1879075502356586496/V9wQzW7V_400x400.jpg",
 ];
-
-const itemVariants = {
-  initial: { y: 24, opacity: 0 },
-  view: { y: 0, opacity: 1 },
-};
-
-const duration = 0.5;
-const stagger = 0.3;
 
 const Hero = () => {
   return (
@@ -40,44 +30,19 @@ const Hero = () => {
         </MagneticEffect>
 
         <h1 className="text-4xl md:text-[5.5rem] mb-7.5 md:mb-10 flex flex-col gap-1.5 md:gap-1">
-          <motion.span
-            initial="initial"
-            animate="view"
-            variants={itemVariants}
-            transition={{ duration, delay: stagger * 1, ease: "easeInOut" }}
-            className="self-center"
-          >
-            Don’t Learn Alone.
-          </motion.span>
-          <motion.span
-            initial="initial"
-            animate="view"
-            variants={itemVariants}
-            transition={{ duration, delay: stagger * 2, ease: "easeInOut" }}
-          >
+          <span className="self-center">Don’t Learn Alone.</span>
+          <span>
             <GradientText>Code Together</GradientText> with
-          </motion.span>
-          <motion.span
-            initial="initial"
-            animate="view"
-            variants={itemVariants}
-            transition={{ duration, delay: stagger * 3, ease: "easeInOut" }}
-            className="self-end"
-          >
+          </span>
+          <span className="self-end">
             a <GradientText>Real Community.</GradientText>
-          </motion.span>
+          </span>
         </h1>
 
-        <motion.p
-          initial="initial"
-          animate="view"
-          variants={itemVariants}
-          transition={{ duration, delay: stagger * 4, ease: "easeInOut" }}
-          className="max-w-xl justify-self-center md:text-xl text-center text-pretty leading-[1.6] mb-10 md:mb-14"
-        >
+        <p className="max-w-xl justify-self-center md:text-xl text-center text-pretty leading-[1.6] mb-10 md:mb-14">
           Finding content is easy — real growth needs practice, collaboration,
           support, guidance, resilience, and consistency.
-        </motion.p>
+        </p>
 
         <div className="justify-self-center">
           <Button href="#cohorts" size="large">
