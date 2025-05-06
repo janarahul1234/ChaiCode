@@ -55,7 +55,7 @@ const resourcesLinks = [
 const Footer = () => {
   return (
     <footer className="pt-4 pb-8">
-      <div className="relative text-center text-[20vw] bg-linear-180 from-40% from-neutral-900 to-orange-500/35 text-transparent bg-clip-text mb-6 sm:mb-0 -z-10">
+      <div className="relative text-center text-[20vw] min-[1150px]:text-[16.5rem] bg-linear-180 from-40% from-neutral-900 to-orange-500/35 text-transparent bg-clip-text mb-6 sm:mb-0 -z-10">
         ChaiCode
       </div>
 
