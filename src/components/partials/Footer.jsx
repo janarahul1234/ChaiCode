@@ -70,7 +70,7 @@ const Footer = () => {
                 <a
                   key={idx}
                   href={href}
-                  className="text-2xl hover:text-orange-500 hover:scale-105 transition duration-300 ease-in-out"
+                  className="text-2xl hover:text-orange-500 hover:scale-110 transition duration-300 ease-in-out"
                 >
                   {icon}
                 </a>

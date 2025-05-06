@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { Tweet } from "react-tweet";
 
 import logo_1 from "../../assets/imgs/logo-1.png";
@@ -51,12 +52,14 @@ const Testimonial = () => {
 
         <div className="flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-8">
           {logos.map(({ name, src }) => (
-            <div
+            <motion.div
               key={name}
-              className="sm:mx-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              className="sm:mx-2 cursor-pointer"
             >
               <img src={src} alt={name} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>
