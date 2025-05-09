@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import Button from "./Button";
+
 import Badge from "./Badge";
+import Button from "./Button";
 
 const formatINR = (number) => {
   return number.toLocaleString("en-IN");
@@ -39,13 +40,13 @@ const Card = ({
           hovered: { y: -8 },
         }}
         transition={{ type: "spring" }}
-        className="h-full flex flex-col bg-neutral-950/50 ring ring-neutral-800 rounded-2xl relative"
+        className="relative h-full flex flex-col bg-neutral-950/50 ring ring-neutral-800 rounded-2xl"
       >
         <div className="bg-neutral-900 aspect-video rounded-t-2xl overflow-hidden z-1">
           <Iframe src={video} />
         </div>
 
-        <div className="p-6 flex flex-col justify-between grow gap-12 relative z-1">
+        <div className="relative p-6 flex flex-col justify-between grow gap-12 z-1">
           {isNew && (
             <Badge className="absolute top-0 right-4 -translate-y-[60%] py-1 pl-3 pr-4">
               <i className="ri-asterisk text-lg"></i> New
@@ -61,6 +62,7 @@ const Card = ({
                 <i className="ri-calendar-line text-base"></i>
                 <span className="text-sm truncate">{startingDate}</span>
               </span>
+              
               <span className="text-sm truncate px-3 py-1.5 flex items-center gap-2 ring ring-neutral-800 rounded-full">
                 <i className="ri-time-line text-base"></i>
                 <span className="text-sm truncate">{duration}</span>
@@ -73,6 +75,7 @@ const Card = ({
               <span className="text-orange-500 text-sm">
                 Save {percentage}%
               </span>
+
               <div className="flex items-center gap-2">
                 <span className="text-white text-2xl font-semibold">
                   ₹{formatINR(discountPrice)}
@@ -82,6 +85,7 @@ const Card = ({
                 </span>
               </div>
             </div>
+
             <Button href={btnLink} className="sm:w-full md:w-fit px-6">
               Buy now
             </Button>
@@ -100,7 +104,7 @@ const Card = ({
             initial: { opacity: 0.6 },
             hovered: { opacity: 1 },
           }}
-          className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,rgba(255,115,0,0.15)_0%,transparent_100%)]"
+          className="absolute inset-0 bg-radial-[35%_5%_at_50%_100%] from-orange-500/25 to-orange-500/0"
         />
       </motion.div>
     </motion.div>

@@ -31,7 +31,7 @@ const FeatureCard = ({ icon, title = "", subtitle = "", className = "" }) => {
             initial: { opacity: 0.6 },
             hovered: { opacity: 1 },
           }}
-          className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,rgba(255,115,0,0.15)_0%,transparent_100%)]"
+          className="absolute inset-0 bg-radial-[30%_8%_at_50%_100%] from-orange-500/25 to-orange-500/0"
         />
       </motion.div>
     </motion.div>

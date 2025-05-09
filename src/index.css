@@ -10,11 +10,15 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    @apply bg-neutral-950 text-neutral-400 text-base font-primary;
+  }
+
   ::selection {
     @apply bg-orange-500 text-white;
   }
+}
 
-  body {
-    @apply font-primary bg-neutral-950 text-neutral-400 text-base;
-  }
+.footer-text {
+  font-size: clamp(1.5rem, 21.5vw, 16.6rem);
 }

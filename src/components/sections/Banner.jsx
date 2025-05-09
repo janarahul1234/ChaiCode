@@ -3,17 +3,18 @@ import Container from "../shared/Container";
 const Banner = () => {
   return (
     <section className="pt-20 pb-8 sm:px-6">
-      <Container className="pt-2 pb-16 mx-0 bg-linear-60 from-40% to-90% from-orange-500 to-orange-700 sm:rounded-3xl">
+      <Container className="bg-linear-60 from-40% to-90% from-orange-500 to-orange-700 pt-2 pb-16 mx-0 max-[300px]:mx-0 sm:rounded-3xl">
         <div className="max-[300px]:mx-4 mx-6 mt-16 mb-8 sm:mb-5 flex flex-col items-center">
           <h1 className="max-w-[552px] text-[2rem] sm:text-5xl text-white text-center leading-[1.2] font-semibold mb-4 sm:mb-5">
             Learn anytime anywhere right from your pocket
           </h1>
-          <p className="max-w-[456px] text-base text-white text-center leading-[1.6] text-pretty mb-10">
+
+          <p className="max-w-[456px] text-white text-center leading-[1.6] text-pretty mb-10">
             Take your coding journey anywhere with the ChaiCode app with
             courses, live sessions, and community in your pocket
           </p>
 
-          <div className="mb-12 flex flex-col sm:flex-row gap-8">
+          <div className="mb-12 flex flex-wrap flex-col md:flex-row justify-center gap-6 md:gap-8">
             <div className="flex items-center gap-2.5">
               <span className="size-[34px] bg-white text-orange-500 flex justify-center items-center rounded-full">
                 <i className="ri-wifi-off-line"></i>
@@ -22,6 +23,7 @@ const Banner = () => {
                 Offline course access
               </span>
             </div>
+
             <div className="flex items-center gap-2.5">
               <span className="size-[34px] bg-white text-orange-500 flex justify-center items-center rounded-full">
                 <i className="ri-notification-2-line"></i>
@@ -30,6 +32,7 @@ const Banner = () => {
                 Live session notifications
               </span>
             </div>
+
             <div className="flex items-center gap-2.5 ">
               <span className="size-[34px] bg-white text-orange-500 flex justify-center items-center rounded-full">
                 <i className="ri-team-line"></i>

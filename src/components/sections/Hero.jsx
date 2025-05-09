@@ -1,8 +1,8 @@
 import Container from "../shared/Container";
 import Badge from "../shared/Badge";
-import Button from "../shared/Button";
-import GradientText from "../shared/GradientText";
 import MagneticEffect from "../shared/MagneticEffect";
+import GradientText from "../shared/GradientText";
+import Button from "../shared/Button";
 
 const images = [
   "https://pbs.twimg.com/profile_images/1875305826887593987/8x4ZhIvO_400x400.jpg",
@@ -44,11 +44,9 @@ const Hero = () => {
           support, guidance, resilience, and consistency.
         </p>
 
-        <div className="justify-self-center">
-          <Button href="#cohorts" size="large">
-            Start Learning Today
-          </Button>
-        </div>
+        <Button href="#cohorts" size="large" className="justify-self-center">
+          Start Learning Today
+        </Button>
       </Container>
     </section>
   );

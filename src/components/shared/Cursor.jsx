@@ -22,7 +22,7 @@ const Cursor = () => {
     <motion.div
       animate={{ left: x, top: y }}
       transition={{ type: "tween", ease: "backOut" }}
-      className="fixed inset-0 -translate-1/2 size-[300px] bg-orange-500 blur-[75px] rounded-full opacity-20 pointer-events-none -z-1"
+      className="fixed inset-0 -translate-1/2 bg-orange-500 size-[300px] blur-[75px] rounded-full opacity-20 -z-1 pointer-events-none"
     />
   );
 };

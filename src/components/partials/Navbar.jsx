@@ -12,7 +12,10 @@ const links = [
   { name: "Cohorts", href: "#cohorts" },
   { name: "Features", href: "#features" },
   { name: "Community", href: "#community" },
-  { name: "Udemy", href: "https://www.udemy.com/course/web-dev-master/?couponCode=CHAISUMMER1" },
+  {
+    name: "Udemy",
+    href: "https://www.udemy.com/course/web-dev-master/?couponCode=CHAISUMMER1",
+  },
 ];
 
 const Navbar = () => {
@@ -27,6 +30,7 @@ const Navbar = () => {
   const updateDotPosition = (name) => {
     const list = listRef.current?.getBoundingClientRect();
     const items = listRef.current?.querySelectorAll("a[data-link]");
+
     items?.forEach((item) => {
       if (item.dataset.link === name) {
         const { left, width } = item.getBoundingClientRect();
@@ -58,11 +62,10 @@ const Navbar = () => {
     }, estimatedTime);
   };
 
-  useEffect(() => {
-    updateDotPosition(activeLink);
-  }, [activeLink]);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
+    updateDotPosition(activeLink);
     const sections = document.querySelectorAll("section[id]");
 
     const onScroll = () => {
@@ -75,11 +78,10 @@ const Navbar = () => {
         const top = section.offsetTop - 60;
         const height = section.offsetHeight;
         const id = section.getAttribute("id");
+
         if (scrollY >= top && scrollY < top + height) {
           const sectionName = id.charAt(0).toUpperCase() + id.slice(1);
-          if (sectionName !== activeLink) {
-            setActiveLink(sectionName);
-          }
+          if (sectionName !== activeLink) setActiveLink(sectionName);
         }
       });
     };
@@ -88,75 +90,77 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [activeLink]);
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-
   return (
     <header
       className={twMerge(
-        "fixed top-0 left-0 w-full z-50 transition after:transition",
+        "fixed top-0 left-0 w-full z-100 after:transition after:duration-300 after:ease-in-out",
         isScrolled
           ? "after:absolute after:inset-0 after:bg-neutral-950/80 after:backdrop-blur-lg after:-z-1"
-          : "bg-transparent"
+          : ""
       )}
     >
       <Container>
-        <nav className="h-20 flex items-center justify-between relative">
+        <nav className="relative h-20 flex items-center justify-between">
           <Logo />
 
           {/* Mobile Menu */}
           <div
             className={twMerge(
-              "md:hidden fixed top-0 w-[80%] h-full px-12 py-28 bg-neutral-950/80 backdrop-blur-lg transition-all z-10",
+              "fixed top-0 w-[80%] sm:w-1/2 h-full px-12 py-28 bg-neutral-950/80 backdrop-blur-lg transition-all duration-300 ease-in-out z-10 min-[974px]:hidden",
               isOpen ? "right-0" : "-right-full"
             )}
           >
             <ul className="flex flex-col gap-12">
-              {links.map(({ name, href }) => (
-                <li key={name}>
+              {links.map(({ name, href }, idx) => (
+                <li key={idx}>
                   <a
                     href={href}
-                    data-link={name}
-                    onClick={handleClick}
+                    target={name === "Udemy" ? "_blank" : ""}
                     className={twMerge(
-                      "text-xl transition",
+                      "text-xl transition duration-300 ease-in-out",
                       activeLink === name
                         ? "text-orange-500"
                         : "text-neutral-400 hover:text-white"
                     )}
+                    data-link={name}
+                    onClick={handleClick}
                   >
                     {name}
                   </a>
                 </li>
               ))}
             </ul>
+
             <button
-              className="absolute top-6 right-6 text-white text-2xl"
+              className="absolute top-6 right-6 text-white cursor-pointer"
               onClick={toggleMenu}
             >
-              <i className="ri-close-large-line" />
+              <i className="ri-close-large-line text-2xl" />
             </button>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <ul ref={listRef} className="flex gap-8 relative">
-              {links.map(({ name, href }) => (
-                <li key={name}>
+          <div className="hidden min-[974px]:block absolute left-1/2 top-1/2 -translate-1/2">
+            <ul ref={listRef} className="relative flex gap-8">
+              {links.map(({ name, href }, idx) => (
+                <li key={idx}>
                   <a
                     href={href}
-                    data-link={name}
-                    onClick={handleClick}
+                    target={name === "Udemy" ? "_blank" : ""}
                     className={twMerge(
-                      "transition",
+                      "transition duration-300 ease-in-out",
                       activeLink === name
                         ? "text-white"
                         : "text-neutral-400 hover:text-white"
                     )}
+                    data-link={name}
+                    onClick={handleClick}
                   >
                     {name}
                   </a>
                 </li>
               ))}
+
               {/* Dot Indicator */}
               <motion.span
                 animate={{ left: dotX }}
@@ -171,15 +175,16 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 max-[300px]:gap-4">
             <Button href="https://courses.chaicode.com/learn" size="small">
               Sign in
             </Button>
+
             <button
-              className="md:hidden text-2xl text-neutral-400 hover:text-white"
+              className="text-neutral-400 hover:text-white transition duration-300 ease-in-out cursor-pointer min-[974px]:hidden"
               onClick={toggleMenu}
             >
-              <i className="ri-menu-3-line" />
+              <i className="ri-menu-3-line text-2xl" />
             </button>
           </div>
         </nav>

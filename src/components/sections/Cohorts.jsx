@@ -1,7 +1,7 @@
 import Container from "../shared/Container";
+import SectionHeader from "../shared/SectionHeader";
 import Card from "../shared/Card";
 import Button from "../shared/Button";
-import SectionHeader from "../shared/SectionHeader";
 
 const cards = [
   {
@@ -14,7 +14,7 @@ const cards = [
     originalPrice: 8999,
     discountPrice: 6999,
     btnLink: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
-    isNew: true,
+    isNew: false,
   },
   {
     video: "https://www.youtube.com/embed/Kjd-SWpe1do?si=3hZlGSHlmDIEVUry",
@@ -29,15 +29,15 @@ const cards = [
     isNew: false,
   },
   {
-    video: "https://www.youtube.com/embed/Fw3FezexzV0?si=0IZpXiGsLPAwIa3f",
-    title: "Coding Hero 2025",
-    description: "Our Community focused program for students",
-    startingDate: "Starts Constantly going",
-    duration: "Always running",
-    percentage: 50,
-    originalPrice: 599,
-    discountPrice: 299,
-    btnLink: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
+    video: "https://www.youtube.com/embed/VNb_LawBBWU?si=LC5_SSi44hrCvy9M",
+    title: "GenAI with Python 1.0",
+    description: "Development side of AI application",
+    startingDate: "Starts April 7, 2025",
+    duration: "1-2 months",
+    percentage: 38,
+    originalPrice: 7999,
+    discountPrice: 4999,
+    btnLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
     isNew: true,
   },
   {
@@ -52,17 +52,18 @@ const cards = [
     btnLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227963",
     isNew: false,
   },
+
   {
-    video: "https://www.youtube.com/embed/VNb_LawBBWU?si=LC5_SSi44hrCvy9M",
-    title: "GenAI with Python 1.0",
-    description: "Development side of AI application",
-    startingDate: "Starts April 7, 2025",
-    duration: "1-2 months",
-    percentage: 38,
-    originalPrice: 7999,
-    discountPrice: 4999,
-    btnLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
-    isNew: false,
+    video: "https://www.youtube.com/embed/Fw3FezexzV0?si=0IZpXiGsLPAwIa3f",
+    title: "Coding Hero 2025",
+    description: "Our Community focused program for students",
+    startingDate: "Starts Constantly going",
+    duration: "Always running",
+    percentage: 50,
+    originalPrice: 599,
+    discountPrice: 299,
+    btnLink: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
+    isNew: true,
   },
 ];
 

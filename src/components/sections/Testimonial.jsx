@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import { Tweet } from "react-tweet";
+import { motion } from "motion/react";
 
 import logo_1 from "../../assets/imgs/logo-1.png";
 import logo_2 from "../../assets/imgs/logo-2.png";
@@ -11,11 +11,11 @@ import Container from "../shared/Container";
 import SectionHeader from "../shared/SectionHeader";
 
 const logos = [
-  { name: "Brand Logo 1", src: logo_1 },
-  { name: "Brand Logo 2", src: logo_2 },
-  { name: "Brand Logo 3", src: logo_3 },
-  { name: "Brand Logo 4", src: logo_4 },
-  { name: "Brand Logo 5", src: logo_5 },
+  { name: "logo 1", src: logo_1 },
+  { name: "logo 2", src: logo_2 },
+  { name: "logo 3", src: logo_3 },
+  { name: "logo 4", src: logo_4 },
+  { name: "logo 5", src: logo_5 },
 ];
 
 const tweetGroups = [
@@ -50,12 +50,13 @@ const Testimonial = () => {
           subtitle="Empowered Here. Now Founders, Creators, and Innovators"
         />
 
-        <div className="flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-8">
-          {logos.map(({ name, src }) => (
+        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-8 pt-8">
+          {logos.map(({ name, src }, idx) => (
             <motion.div
-              key={name}
+              key={idx}
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="sm:mx-2 cursor-pointer"
             >
               <img src={src} alt={name} />

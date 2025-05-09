@@ -27,7 +27,7 @@ const socialLinks = [
   },
 ];
 
-const productsLinks = [
+const productLinks = [
   { name: "Cohort", href: "https://courses.chaicode.com/learn" },
   {
     name: "Courses",
@@ -41,7 +41,7 @@ const productsLinks = [
   { name: "Masterji", href: "https://masterji.co" },
 ];
 
-const resourcesLinks = [
+const resourceLinks = [
   { name: "Docs", href: "https://docs.chaicode.com" },
   { name: "Privacy Policy", href: "https://www.chaicode.com/privacy-policy" },
   {
@@ -55,17 +55,18 @@ const resourcesLinks = [
 const Footer = () => {
   return (
     <footer className="pt-4 pb-8">
-      <div className="relative text-center text-[20vw] min-[1150px]:text-[16.5rem] bg-linear-180 from-40% from-neutral-900 to-orange-500/35 text-transparent bg-clip-text mb-6 sm:mb-0 -z-10">
+      <div className="relative footer-text bg-linear-to-b from-40% from-neutral-900 to-orange-500/35 text-transparent bg-clip-text text-center mb-6 sm:mb-0 -z-10">
         ChaiCode
       </div>
 
-      <Container className="px-4 md:px-8 grid grid-cols-1 md:grid-cols-[40%_1fr_1fr] gap-10">
+      <Container className="grid grid-cols-1 sm:grid-cols-[50%_1fr_1fr] gap-8">
         <div className="flex flex-col justify-between">
           <div>
-            <p className="max-w-[24rem] text-base mb-8 sm:mb-6 text-center sm:text-left">
+            <p className="max-w-[24rem] text-pretty text-center sm:text-left mx-auto sm:mx-0 mb-8 sm:mb-6">
               Learn, build, and grow with a community that moves with you.
             </p>
-            <div className="flex justify-center sm:justify-start gap-6 mb-6">
+
+            <div className="flex flex-wrap justify-center sm:justify-start gap-6 mb-6">
               {socialLinks.map(({ icon, href }, idx) => (
                 <a
                   key={idx}
@@ -78,48 +79,39 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="text-base text-white hidden sm:block">
-            © 2025 ChaiCode. All rights reserved.
+          <p className="text-white hidden sm:block">
+            &copy; 2025 ChaiCode. All rights reserved.
           </p>
         </div>
 
-        <div>
-          <h4 className="text-sm mb-4 text-white">Products</h4>
-          <ul className="text-base space-y-3.5">
-            {productsLinks.map(({ name, href }, idx) => (
-              <li key={idx}>
-                <a
-                  href={href}
-                  className="hover:text-orange-500 hover:underline hover:underline-offset-2 transition duration-300 ease-in-out"
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <FooterColumn title="Products" links={productLinks} />
+        <FooterColumn title="Resources" links={resourceLinks} />
 
-        <div>
-          <h4 className="text-sm mb-4 text-white">Resources</h4>
-          <ul className="text-base space-y-3.5">
-            {resourcesLinks.map(({ name, href }, idx) => (
-              <li key={idx}>
-                <a
-                  href={href}
-                  className="hover:text-orange-500 hover:underline hover:underline-offset-2 transition duration-300 ease-in-out"
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <p className="text-base text-white sm:hidden text-center">
-          © 2025 ChaiCode. All rights reserved.
+        <p className="text-white text-center sm:hidden">
+          &copy; 2025 ChaiCode. All rights reserved.
         </p>
       </Container>
     </footer>
+  );
+};
+
+const FooterColumn = ({ title = "", links = [] }) => {
+  return (
+    <div>
+      <h3 className="text-white text-sm mb-4">{title}</h3>
+      <ul className="space-y-3.5">
+        {links.map(({ name, href }, idx) => (
+          <li key={idx}>
+            <a
+              href={href}
+              className="hover:text-orange-500 hover:underline hover:underline-offset-2 transition duration-300 ease-in-out"
+            >
+              {name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

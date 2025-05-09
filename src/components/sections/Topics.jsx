@@ -35,10 +35,10 @@ const Topis = ({ name = "", icon }) => {
       <motion.div
         variants={{
           initial: { y: 0 },
-          hovered: { y: -8 },
+          hovered: { y: -4 },
         }}
         transition={{ type: "spring" }}
-        className="bg-neutral-900/50 text-white text-sm px-5 py-3 flex items-center gap-2.5 ring ring-neutral-800 rounded-2xl relative"
+        className="relative bg-neutral-900/50 text-white text-sm px-5 py-3 flex items-center gap-2.5 ring ring-neutral-800 rounded-2xl cursor-pointer"
       >
         <div className="text-xl">{icon}</div>
         <h2 className="text-base">{name}</h2>
@@ -55,7 +55,7 @@ const Topis = ({ name = "", icon }) => {
             initial: { opacity: 0.6 },
             hovered: { opacity: 1 },
           }}
-          className="absolute inset-0 bg-[radial-gradient(30%_15%_at_50%_100%,rgba(255,115,0,0.15)_0%,transparent_100%)]"
+          className="absolute inset-0 bg-radial-[30%_15%_at_50%_100%] from-orange-500/25 to-orange-500/0"
         />
       </motion.div>
     </motion.div>
@@ -72,7 +72,7 @@ const Topics = () => {
           subtitle="Videos, courses, and more. Your topic is waiting in our curated tracks"
         />
 
-        <div className="flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-8 sm:hidden">
+        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-8 pt-8 sm:hidden">
           {topicsPhone.map((topic, idx) => (
             <Topis key={idx} {...topic} />
           ))}
@@ -83,7 +83,7 @@ const Topics = () => {
           />
         </div>
 
-        <div className="sm:flex flex-wrap justify-center items-center gap-6 gap-y-8 pt-8 hidden">
+        <div className="sm:flex flex-wrap items-center justify-center gap-6 gap-y-8 pt-8 hidden">
           {topics.map((topic, idx) => (
             <Topis key={idx} {...topic} />
           ))}
