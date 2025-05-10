@@ -106,7 +106,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div
             className={twMerge(
-              "fixed top-0 w-[80%] sm:w-1/2 h-full px-12 py-28 bg-neutral-950/80 backdrop-blur-lg transition-all duration-300 ease-in-out z-10 min-[974px]:hidden",
+              "fixed top-0 w-[80%] sm:w-1/2 h-full px-12 py-28 bg-neutral-950/80 backdrop-blur-lg transition-all duration-200 ease-in-out z-10 min-[974px]:hidden",
               isOpen ? "right-0" : "-right-full"
             )}
           >
